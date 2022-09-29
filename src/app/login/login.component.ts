@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +10,15 @@ export class LoginComponent implements OnInit {
   username = 'ousmane1.sall@uvs.edu.sn';
   pwd = 'passer123';
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   valider() {
-    alert('Bienevnue ' + this.username);
+    if (this.username.indexOf('@uvs.edu.sn') != -1) {
+      this.router.navigateByUrl('accueil');
+    } else {
+      alert('Vérifier le login et le mot de passe saisies !!!');
+    }
   }
 }
