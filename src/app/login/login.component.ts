@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   valider() {
     if (this.username.indexOf('@uvs.edu.sn') != -1) {
-      this.router.navigateByUrl('accueil');
+      this.router.navigateByUrl('accueil/'+this.username);
     } else {
       alert('Vérifier le login et le mot de passe saisies !!!');
     }
