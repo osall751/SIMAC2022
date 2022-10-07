@@ -8,3 +8,27 @@
     </div>
   </form>
 </div>
+
+<h1>Test de la directive *NgIf</h1>
+<div class="form-group">
+  <label for="">Sasir un nombre</label>
+  <input type="number" class="form-control" name="nombre" [(ngModel)]="nombre" 
+  placeholder="Nombre ?">
+</div>
+
+<div *ngIf="nombre%2==0;else templateName">
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>{{nombre}} est un nombre pair !!!</strong> 
+  </div>
+</div>
+<ng-template #templateName>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>{{nombre}} est un nombre impair !!!</strong> 
+  </div>
+</ng-template>
